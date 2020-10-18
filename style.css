@@ -1,0 +1,17 @@
+.timerCountDown {
+    float: right;
+    margin-top: -20px;
+}
+
+.viewHighScore {
+    margin-top: 20px;
+}
+
+main{
+
+}
+
+.hide {
+    display: none;
+    
+}

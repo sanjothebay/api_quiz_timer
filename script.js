@@ -54,21 +54,21 @@
 
 
 var questions = [
-    {q:"Commonly use data type Do Not Include:", 
-    c: ["Strings", "Booleans","Alerts","Numbers"] , 
-    a: "Alerts"},
-    {q:"The condition in an if / else statement is eclosed within __.:", 
-    c: ["quotes", "curlybraces","parenthises","square Brackets"] , 
-    a: "parenthises"},
-    {q:"Arrays on JavaScript can be used to store ___.", 
-    c: ["numbers and strings", "others arrays","booleans","all of the above"] , 
-    a: "parenthises"},
-    {q:"String values must be closed within when being assigned to a veriables. ", 
-    c: ["commas", "curlybraces","quotes","parenthises"] , 
-    a: "parenthises"},
-    {q:"String values must be closed within when being assigned to a veriables. ", 
-    c: ["JavaScript", "git terminal","for loops","consol.log"] , 
-    a: "consol.log"}
+    {ask:"Commonly use data type Do Not Include:", 
+    choices: ["Strings", "Booleans","Alerts","Numbers"] , 
+    answersToQuestions: "Alerts"},
+    {ask:"The condition in an if / else statement is eclosed within __.:", 
+    choices: ["quotes", "curlybraces","parenthises","square Brackets"] , 
+    answersToQuestions: "parenthises"},
+    {ask:"Arrays on JavaScript can be used to store ___.", 
+    choices: ["numbers and strings", "others arrays","booleans","all of the above"] , 
+    answersToQuestions: "parenthises"},
+    {ask:"String values must be closed within when being assigned to a veriables. ", 
+    choices: ["commas", "curlybraces","quotes","parenthises"] , 
+    answersToQuestions: "parenthises"},
+    {ask:"String values must be closed within when being assigned to a veriables. ", 
+    choices: ["JavaScript", "git terminal","for loops","consol.log"] , 
+    answersToQuestions: "consol.log"}
 
 ]
 
@@ -82,37 +82,55 @@ setTimeout(timeRanOut, 5000);
 getQuestions();
 
 document.getElementById("start").setAttribute("class", "hide")
-document.getElementById("p").setAttribute("class", "hide")
+document.getElementById("instructions").setAttribute("class", "hide")
 
 
 });
 
 
-var currentqustion = 0;
+var currentQustion = 0;
+var currentAnswer = 0;
 
 function getQuestions (){
-    var h3El = document.getElementById("titleQuiz");
+    var h1El = document.getElementById("titleQuiz");
 
-    var answerbutton = document.getElementById("answerbutton");
-    var getquestions = questions[currentqustion];
+    var choiceButton = document.getElementById("choiceButton");
+    var getQuestions = questions[currentQustion];
 
-    h3El.textContent = getquestions.q;
+    h1El.textContent = getQuestions.ask;
 
-    for (var i = 0; i < getquestions.a.length; i++); {
-        var answers = getquestions.a[i];
+    for (var i = 0; i < getQuestions.answersToQuestions.length; i++); {
+        var questionsAsked = getQuestions.answersToQuestions[i];
         
         var buttonEl = document.createElement("buttonEl");
-        buttonEl.textContent = answers;
-        answerbutton.appendChild(buttonEl);
+        buttonEl.textContent = questionsAsked;
+        choiceButton.appendChild(buttonEl);
+
+
+        var h4El = document.getElementById("possibleAnswersList")
+
+        var answerButton = document.getElementById("answerButton");
+        var getAnswers = questions[currentAnswer];
+
+        h4El.textContent = getAnswers.choices;
+        
+        for (var i = 0; i < getAnswers.answersToQuestions.length; i++); {
+            var answersGiven = getAnswers.answersToQuestions[i];
+
+            var answerButtonEl = document.createElement("answerButtonEl");
+            answerButtonEl.textContent = answersGiven;
+            answerButton.appendChild(answerButtonEl);
+
+        }
+
+
 
 
 
     }
-
     
-}
-
-
+    
+};
 function timeRanOut() {
     alert("Time Ran Out!!!!");
 };

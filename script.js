@@ -82,6 +82,8 @@ setTimeout(timeRanOut, 5000);
 getQuestions();
 
 document.getElementById("start").setAttribute("class", "hide")
+document.getElementById("p").setAttribute("class", "hide")
+
 
 });
 

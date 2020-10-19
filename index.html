@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <header>
         <div class="viewHighScore">View HighScore:</div>
-        <div class="timerCountDown">Time:      </div>
+        <div class="timerCountDown">Time: </div>
     </header>
 
     <main>
         <div class="quiz" id="quiz">
-            <h3 id = "titleQuiz"></h3>
+            <h3 id="titleQuiz"></h3>
             <div class="answerbutton" id="answerbutton"></div>
-            <button id ="start">start</button>
+            <div class="container" id="quizInstructions">
+                <div class="row justify-content-around align-items-center">
+                    <div class="col-sm-6 col-lg-6 col-md-6">
+                        <h4 class =  "p" id = "p">Try to answer the following code-related questions within the time
+                            limit. Keep in mind that incorrect answers will penalized your scoretime
+                            by ten seconds </h4>
+                        <button id="start">start</button>
+                    </div>
+                </div>
+            </div>
         </div>
-    
+
 
     </main>
-    
+
     <script src="./script.js"></script>
 </body>
+
 </html>

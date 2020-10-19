@@ -54,39 +54,54 @@
 
 
 var questions = [
-    {q:"Commonly use data type Do Not Include:", a: ["Strings", "Booleans","Alerts","Numbers",] , c: "Alerts"},
-    {q:"Commonly use data type Do Not Include:", a: ["Strings", "Booleans","Alerts","Numbers",] , c: "Alerts"},
-    {q:"Commonly use data type Do Not Include:", a: ["Strings", "Booleans","Alerts","Numbers",] , c: "Alerts"},
-    {q:"Commonly use data type Do Not Include:", a: ["Strings", "Booleans","Alerts","Numbers",] , c: "Alerts"},
-    {q:"Commonly use data type Do Not Include:", a: ["Strings", "Booleans","Alerts","Numbers",] , c: "Alerts"}
+    {q:"Commonly use data type Do Not Include:", 
+    c: ["Strings", "Booleans","Alerts","Numbers"] , 
+    a: "Alerts"},
+    {q:"The condition in an if / else statement is eclosed within __.:", 
+    c: ["quotes", "curlybraces","parenthises","square Brackets"] , 
+    a: "parenthises"},
+    {q:"Arrays on JavaScript can be used to store ___.", 
+    c: ["numbers and strings", "others arrays","booleans","all of the above"] , 
+    a: "parenthises"},
+    {q:"String values must be closed within when being assigned to a veriables. ", 
+    c: ["commas", "curlybraces","quotes","parenthises"] , 
+    a: "parenthises"},
+    {q:"String values must be closed within when being assigned to a veriables. ", 
+    c: ["JavaScript", "git terminal","for loops","consol.log"] , 
+    a: "consol.log"}
 
 ]
 
 
 
-document.getElementById("start").addEventListener("click", function(){
+document.getElementById("start").addEventListener("click", function(event){
 // need to add timer
-getQuestions()
+event.preventDefault();
+setTimeout(timeRanOut, 5000);
+
+getQuestions();
 
 document.getElementById("start").setAttribute("class", "hide")
 
-})
+});
+
+
 var currentqustion = 0;
 
 function getQuestions (){
-    var h3El = document.getElementById("TitleQuiz")
-    var answerbutton = document.getElementById("answerbutton")
-console.log(answerbutton)
-    var getquestions = questions[currentqustion]
+    var h3El = document.getElementById("titleQuiz");
 
-    h3El.textContent = getquestions.q
+    var answerbutton = document.getElementById("answerbutton");
+    var getquestions = questions[currentqustion];
 
-    for (var i = 0; i < getquestions.a.length; i++) {
+    h3El.textContent = getquestions.q;
+
+    for (var i = 0; i < getquestions.a.length; i++); {
         var answers = getquestions.a[i];
         
-        var buttonEl = document.createElement("button")
-        buttonEl.textContent = answers
-        answerbutton.appendChild("buttonEl")
+        var buttonEl = document.createElement("buttonEl");
+        buttonEl.textContent = answers;
+        answerbutton.appendChild(buttonEl);
 
 
 
@@ -95,6 +110,10 @@ console.log(answerbutton)
     
 }
 
+
+function timeRanOut() {
+    alert("Time Ran Out!!!!");
+};
 
 
 

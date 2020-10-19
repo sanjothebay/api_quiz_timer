@@ -75,9 +75,9 @@ var questions = [
 
 
 document.getElementById("start").addEventListener("click", function(event){
-// need to add timer
-event.preventDefault();
-setTimeout(timeRanOut, 5000);
+    event.preventDefault();
+    // need to add timer
+// setTimeout(timeRanOut, 5000);
 
 getQuestions();
 
@@ -121,19 +121,18 @@ function getQuestions (){
             answerButtonEl.textContent = answersGiven;
             answerButton.appendChild(answerButtonEl);
 
-        }
+        };
 
 
 
 
 
-    }
+    };
+};
     
     
-};
-function timeRanOut() {
-    alert("Time Ran Out!!!!");
-};
-
-
+// };
+// function timeRanOut() {
+//     alert("Time Ran Out!!!!");
+// };
 

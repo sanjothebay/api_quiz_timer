@@ -90,6 +90,7 @@ document.getElementById("instructions").setAttribute("class", "hide")
 
 var currentQustion = 0;
 var currentAnswer = 0;
+var CurrentHighScore =0;
 
 function getQuestions (){
     var h1El = document.getElementById("titleQuiz");
@@ -130,6 +131,37 @@ function getQuestions (){
     };
 };
     
+// add a form to teh Html for the list ???
+
+
+// function renderTodos()  {
+//   todoCountSpan.textContent = todos.length;
+//   for (var i = 0; i < todos.length; i++) {
+//     var todo = todos[i];
+    
+//     var li = document.createElement("li");
+//     li.textContent = todo;
+//     todoList.appendChild(li);
+//   }
+// }
+// renderTodos();
+
+
+
+
+
+/*
+see in 2:48 for the list to come out with the array 
+
+.matches("button)
+
+function displayMessage(type, message) {
+  msgDiv.textContent = message;
+  msgDiv.setAttribute("class", type);
+}
+
+renderTodo
+*/
     
 // };
 // function timeRanOut() {

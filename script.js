@@ -72,57 +72,54 @@ var questions = [
 
 ]
 
+var currentQuestionIndex = 0;
+var currentAnswer = 0;
+var CurrentHighScore =0;
 
 
-document.getElementById("start").addEventListener("click", function(event){
+document.getElementById("startButton").addEventListener("click", function(event){
     event.preventDefault();
     // need to add timer
 // setTimeout(timeRanOut, 5000);
 
 getQuestions();
 
-document.getElementById("start").setAttribute("class", "hide")
+document.getElementById("startButton").setAttribute("class", "hide")
 document.getElementById("instructions").setAttribute("class", "hide")
+document.getElementById("questionsText").setAttribute("class", "")
 
 
 });
 
 
-var currentQustion = 0;
-var currentAnswer = 0;
-var CurrentHighScore =0;
-
 function getQuestions (){
-    var h1El = document.getElementById("titleQuiz");
+    var questiontionGoingToBeAsked = document.getElementById("questionsText");
 
-    var choiceButton = document.getElementById("choiceButton");
-    var getQuestions = questions[currentQustion];
+    // var choiceButton = document.getElementById("choiceButton");
+    var currentQuestion = questions[currentQuestionIndex];
 
-    h1El.textContent = getQuestions.ask;
+    questiontionGoingToBeAsked.textContent = currentQuestion.ask;
 
-    for (var i = 0; i < getQuestions.answersToQuestions.length; i++); {
-        var questionsAsked = getQuestions.answersToQuestions[i];
+    for (var i = 0; i < currentQuestion.choices.length; i++) {
+        var currentPossiableAnswer = currentQuestion.choices[i];
         
-        var buttonEl = document.createElement("buttonEl");
-        buttonEl.textContent = questionsAsked;
-        choiceButton.appendChild(buttonEl);
+        var possibleAnswersListEl = document.getElementById("possibleAnswersList")
+        var liEl = document.createElement("li")
+        var buttonEl = document.createElement("button");
+        buttonEl.textContent = currentPossiableAnswer;
+        possibleAnswersListEl.appendChild(liEl);
+        liEl.appendChild(buttonEl);
 
+        console.log(currentQuestion)
+        console.log(possibleAnswersListEl)
+        console.log(currentQuestion.choices,i)
 
-        var h4El = document.getElementById("possibleAnswersList")
+        // var getAnswers = questions[currentAnswer];
+        // liEl.textContent = getAnswers.choices;
 
-        var answerButton = document.getElementById("answerButton");
-        var getAnswers = questions[currentAnswer];
+        // KNOW To know when user click event.listener for each button 
 
-        h4El.textContent = getAnswers.choices;
         
-        for (var i = 0; i < getAnswers.answersToQuestions.length; i++); {
-            var answersGiven = getAnswers.answersToQuestions[i];
-
-            var answerButtonEl = document.createElement("answerButtonEl");
-            answerButtonEl.textContent = answersGiven;
-            answerButton.appendChild(answerButtonEl);
-
-        };
 
 
 

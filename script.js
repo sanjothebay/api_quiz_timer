@@ -82,20 +82,19 @@ document.getElementById("startButton").addEventListener("click", function(event)
     // need to add timer
 // setTimeout(timeRanOut, 5000);
 
-getQuestions();
 
 document.getElementById("startButton").setAttribute("class", "hide")
 document.getElementById("instructions").setAttribute("class", "hide")
 document.getElementById("questionsText").setAttribute("class", "")
 
+getQuestions();
 
 });
 
 
 function getQuestions (){
-    var questionGoingToBeAsked = document.getElementById("questionsText");
 
-    // var choiceButton = document.getElementById("choiceButton");
+    var questionGoingToBeAsked = document.getElementById("questionsText");
     var currentQuestion = questions[currentQuestionIndex];
 
     questionGoingToBeAsked.textContent = currentQuestion.ask;
@@ -110,9 +109,15 @@ function getQuestions (){
         possibleAnswersListEl.appendChild(liEl);
         liEl.appendChild(buttonEl);
     
-buttonEl.addEventListener("click", function () {
-    if (currentQuestion.ask[2] !== "Alert") {
-        
+
+buttonEl.addEventListener("click", function (event) {
+    event.preventDefault()
+
+
+    if (currentQuestion.choices !== currentQuestion.ask,2) {
+        alert("wrong")
+        console.log(buttonEl)
+        console.log(currentQuestion.choices,1)
     }
     
 })
@@ -131,9 +136,9 @@ buttonEl.addEventListener("click", function () {
         // liEl.textContent = getAnswers.choices;
 
         // KNOW To know when user click event.listener for each button 
-        console.log(currentQuestion)
-        console.log(possibleAnswersListEl)
-        console.log(currentQuestion.choices,i)
+        // console.log(currentQuestion)
+        // console.log(possibleAnswersListEl)
+        // console.log(currentQuestion.choices,i)
     
     };
 };

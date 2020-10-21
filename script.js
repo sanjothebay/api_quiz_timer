@@ -93,12 +93,12 @@ document.getElementById("questionsText").setAttribute("class", "")
 
 
 function getQuestions (){
-    var questiontionGoingToBeAsked = document.getElementById("questionsText");
+    var questionGoingToBeAsked = document.getElementById("questionsText");
 
     // var choiceButton = document.getElementById("choiceButton");
     var currentQuestion = questions[currentQuestionIndex];
 
-    questiontionGoingToBeAsked.textContent = currentQuestion.ask;
+    questionGoingToBeAsked.textContent = currentQuestion.ask;
 
     for (var i = 0; i < currentQuestion.choices.length; i++) {
         var currentPossiableAnswer = currentQuestion.choices[i];
@@ -109,22 +109,32 @@ function getQuestions (){
         buttonEl.textContent = currentPossiableAnswer;
         possibleAnswersListEl.appendChild(liEl);
         liEl.appendChild(buttonEl);
+    
+buttonEl.addEventListener("click", function () {
+    if (currentQuestion.ask[2] !== "Alert") {
+        
+    }
+    
+})
 
-        console.log(currentQuestion)
-        console.log(possibleAnswersListEl)
-        console.log(currentQuestion.choices,i)
+
+
+
+
+
+
+
+
+
 
         // var getAnswers = questions[currentAnswer];
         // liEl.textContent = getAnswers.choices;
 
         // KNOW To know when user click event.listener for each button 
-
-        
-
-
-
-
-
+        console.log(currentQuestion)
+        console.log(possibleAnswersListEl)
+        console.log(currentQuestion.choices,i)
+    
     };
 };
     

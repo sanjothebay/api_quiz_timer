@@ -95,6 +95,7 @@ function startGameQuestions(){
 
     for (let i = 0; i < theCurrentQuestion.answerToQuestion.length; i++) {
         let theCurrentPossibleAnswer = theCurrentQuestion.answerToQuestion[i];
+        
 
         let thePossibleAnswersListEl = document.getElementById("possibleAnswersList")
 
@@ -107,20 +108,17 @@ function startGameQuestions(){
         buttonEl.addEventListener("click", function (event) {
             event.preventDefault()
 
-            function name(params) {
-                
-            }
 
 });
 };
 }
 
-// function name(params) {
-    
+document.getElementById("possibleAnswersList").addEventListener("click", function(event) {
+    event.target = theCurrentPossibleAnswer[2]
 
 
 
-// };
+});
 
 
 // function name(params) {

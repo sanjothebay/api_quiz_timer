@@ -53,130 +53,92 @@
 // with  able to clear and go back 
 
 
-var questions = [
+let questionsList = [
     {ask:"Commonly use data type Do Not Include:", 
     choices: ["Strings", "Booleans","Alerts","Numbers"] , 
-    answersToQuestions: "Alerts"},
+    answerToQuestion: "Alerts"},
     {ask:"The condition in an if / else statement is eclosed within __.:", 
     choices: ["quotes", "curlybraces","parenthises","square Brackets"] , 
-    answersToQuestions: "parenthises"},
+    answerToQuestion: "parenthises"},
     {ask:"Arrays on JavaScript can be used to store ___.", 
     choices: ["numbers and strings", "others arrays","booleans","all of the above"] , 
-    answersToQuestions: "parenthises"},
+    answerToQuestion: "parenthises"},
     {ask:"String values must be closed within when being assigned to a veriables. ", 
     choices: ["commas", "curlybraces","quotes","parenthises"] , 
-    answersToQuestions: "parenthises"},
+    answerToQuestion: "parenthises"},
     {ask:"String values must be closed within when being assigned to a veriables. ", 
     choices: ["JavaScript", "git terminal","for loops","consol.log"] , 
-    answersToQuestions: "consol.log"}
+    answerToQuestion: "consol.log"}
 
 ]
 
-var currentQuestionIndex = 0;
-var currentAnswer = 0;
-var CurrentHighScore =0;
+let currentQuestionIndex = 0;
+let currentAnswer = 0;
+let CurrentHighScore =0;
 
 
-document.getElementById("startButton").addEventListener("click", function(event){
+document.getElementById("startButtonGame").addEventListener("click", function(event){
     event.preventDefault();
     // need to add timer
 // setTimeout(timeRanOut, 5000);
 
 
-document.getElementById("startButton").setAttribute("class", "hide")
-document.getElementById("instructions").setAttribute("class", "hide")
-document.getElementById("questionsText").setAttribute("class", "")
+document.getElementById("startButtonGame").setAttribute("class", "hide")
+document.getElementById("instructionsForGame").setAttribute("class", "hide")
+document.getElementById("questionsTextInput").setAttribute("class", "")
 
-getQuestions();
+startGameQuestions();
 
 });
 
 
-function getQuestions (){
+function startGameQuestions(){
 
-    var questionGoingToBeAsked = document.getElementById("questionsText");
-    var currentQuestion = questions[currentQuestionIndex];
-
-    questionGoingToBeAsked.textContent = currentQuestion.ask;
-
-    for (var i = 0; i < currentQuestion.choices.length; i++) {
-        var currentPossiableAnswer = currentQuestion.choices[i];
-        
-        var possibleAnswersListEl = document.getElementById("possibleAnswersList")
-        var liEl = document.createElement("li")
-        var buttonEl = document.createElement("button");
-        buttonEl.textContent = currentPossiableAnswer;
-        possibleAnswersListEl.appendChild(liEl);
-        liEl.appendChild(buttonEl);
-    
-
-buttonEl.addEventListener("click", function (event) {
-    event.preventDefault()
-
-
-    if (currentQuestion.choices !== currentQuestion.ask,2) {
-        alert("wrong")
-        console.log(buttonEl)
-        console.log(currentQuestion.choices,1)
-    }
-    
-})
-
-
-
-
-
-
-
-
-
-
-
-        // var getAnswers = questions[currentAnswer];
-        // liEl.textContent = getAnswers.choices;
-
-        // KNOW To know when user click event.listener for each button 
-        // console.log(currentQuestion)
-        // console.log(possibleAnswersListEl)
-        // console.log(currentQuestion.choices,i)
-    
-    };
+    questionGoingToBeAsked()
 };
-    
-// add a form to teh Html for the list ???
 
 
-// function renderTodos()  {
-//   todoCountSpan.textContent = todos.length;
-//   for (var i = 0; i < todos.length; i++) {
-//     var todo = todos[i];
+
+// // var getAnswers = questions[currentAnswer];
+// // liEl.textContent = getAnswers.choices;
+
+// // KNOW To know when user click event.listener for each button 
+// // console.log(currentQuestion)
+// // console.log(possibleAnswersListEl)
+// // console.log(currentQuestion.choices,i)
+// // add a form to teh Html for the list ???
+
+
+// // function renderTodos()  {
+// //   todoCountSpan.textContent = todos.length;
+// //   for (var i = 0; i < todos.length; i++) {
+// //     var todo = todos[i];
     
-//     var li = document.createElement("li");
-//     li.textContent = todo;
-//     todoList.appendChild(li);
-//   }
+// //     var li = document.createElement("li");
+// //     li.textContent = todo;
+// //     todoList.appendChild(li);
+// //   }
+// // }
+// // renderTodos();
+
+
+
+
+
+// /*
+// see in 2:48 for the list to come out with the array 
+
+// .matches("button)
+
+// function displayMessage(type, message) {
+//   msgDiv.textContent = message;
+//   msgDiv.setAttribute("class", type);
 // }
-// renderTodos();
 
-
-
-
-
-/*
-see in 2:48 for the list to come out with the array 
-
-.matches("button)
-
-function displayMessage(type, message) {
-  msgDiv.textContent = message;
-  msgDiv.setAttribute("class", type);
-}
-
-renderTodo
-*/
+// renderTodo
+// */
     
-// };
-// function timeRanOut() {
-//     alert("Time Ran Out!!!!");
-// };
-
+// // };
+// // function timeRanOut() {
+// //     alert("Time Ran Out!!!!");
+// // };

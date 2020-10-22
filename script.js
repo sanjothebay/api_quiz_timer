@@ -53,28 +53,23 @@
 // with  able to clear and go back 
 
 
-let questionsList = [
-    {ask:"Commonly use data type Do Not Include:", 
-    choices: ["Strings", "Booleans","Alerts","Numbers"] , 
-    answerToQuestion: "Alerts"},
-    {ask:"The condition in an if / else statement is eclosed within __.:", 
-    choices: ["quotes", "curlybraces","parenthises","square Brackets"] , 
-    answerToQuestion: "parenthises"},
-    {ask:"Arrays on JavaScript can be used to store ___.", 
-    choices: ["numbers and strings", "others arrays","booleans","all of the above"] , 
-    answerToQuestion: "parenthises"},
-    {ask:"String values must be closed within when being assigned to a veriables. ", 
-    choices: ["commas", "curlybraces","quotes","parenthises"] , 
-    answerToQuestion: "parenthises"},
-    {ask:"String values must be closed within when being assigned to a veriables. ", 
-    choices: ["JavaScript", "git terminal","for loops","consol.log"] , 
-    answerToQuestion: "consol.log"}
+let theQuestionsList = [
+    {questionsAsked:"Commonly use data type Do Not Include:", 
+    answerToQuestion: ["Strings", "Booleans","Alerts","Numbers"]},
+    {questionsAsked:"The condition in an if / else statement is eclosed within __.:", 
+    answerToQuestion: ["quotes", "curlybraces","parenthises","square Brackets"]},
+    {questionsAsked:"Arrays on JavaScript can be used to store ___.", 
+    answerToQuestion: ["numbers and strings", "others arrays","booleans","all of the above"]},
+    {questionsAsked:"String values must be closed within when being assigned to a veriables. ", 
+    answerToQuestion: ["commas", "curlybraces","quotes","parenthises"]},
+    {questionsAsked:"String values must be closed within when being assigned to a veriables. ", 
+    answerToQuestion: ["JavaScript", "git terminal","for loops","consol.log"]}
 
 ]
 
-let currentQuestionIndex = 0;
-let currentAnswer = 0;
-let CurrentHighScore =0;
+let theCurrentQuestionIndex = 0;
+let theCurrentAnswer = 0;
+let theCurrentHighScore =0;
 
 
 document.getElementById("startButtonGame").addEventListener("click", function(event){
@@ -93,10 +88,47 @@ startGameQuestions();
 
 
 function startGameQuestions(){
+    let theQuestionGoingToBeAsked = document.getElementById("questionsTextInput");
+    let theCurrentQuestion = theQuestionsList[theCurrentQuestionIndex];
 
-    questionGoingToBeAsked()
+    theQuestionGoingToBeAsked.textContent = theCurrentQuestion.questionsAsked;
+
+    for (let i = 0; i < theCurrentQuestion.answerToQuestion.length; i++) {
+        let theCurrentPossibleAnswer = theCurrentQuestion.answerToQuestion[i];
+
+        let thePossibleAnswersListEl = document.getElementById("possibleAnswersList")
+
+        let liEl = document.createElement("li")
+        let buttonEl = document.createElement("button");
+        buttonEl.textContent = theCurrentPossibleAnswer;
+        thePossibleAnswersListEl.appendChild(liEl);
+        liEl.appendChild(buttonEl);
+
+        buttonEl.addEventListener("click", function (event) {
+            event.preventDefault()
+
+            function name(params) {
+                
+            }
+
+});
 };
+}
 
+// function name(params) {
+    
+
+
+
+// };
+
+
+// function name(params) {
+    
+
+
+
+// };
 
 
 // // var getAnswers = questions[currentAnswer];
@@ -141,4 +173,4 @@ function startGameQuestions(){
 // // };
 // // function timeRanOut() {
 // //     alert("Time Ran Out!!!!");
-// // };
+// // }};

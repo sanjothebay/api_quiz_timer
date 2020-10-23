@@ -100,12 +100,14 @@ function startGameQuestions(){
     let theCurrentQuestion = theQuestionsList[theCurrentQuestionIndex];
 
     theQuestionGoingToBeAsked.textContent = theCurrentQuestion.questionsAsked;
+    displayMessage.innerHTML = "";
 
     let thePossibleAnswersListEl = document.getElementById("possibleAnswersList");
     thePossibleAnswersListEl.innerHTML = "";
     for (let i = 0; i < theCurrentQuestion.theAnswerToQuestion.length; i++) {
          theCurrentPossibleAnswer = theCurrentQuestion.theAnswerToQuestion[i];
          console.log(theCurrentQuestion)
+         
 
         let liEl = document.createElement("li")
         let buttonEl = document.createElement("button");
@@ -140,11 +142,14 @@ function startGameQuestions(){
         displayMessage.textContent = "Right Answer!!!!"
         startGameQuestions();
         
+        
     }
 
     
 });
 };
+
+
 
 
 

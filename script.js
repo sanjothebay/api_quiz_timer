@@ -55,17 +55,24 @@
 
 let theQuestionsList = [
     {questionsAsked:"Commonly use data type Do Not Include:", 
-    answerToQuestion: ["Strings", "Booleans","Alerts","Numbers"]},
+    theAnswerToQuestion: ["Strings", "Booleans","Alerts","Numbers"] , 
+    theCorrectAnswers: "Alerts"},
     {questionsAsked:"The condition in an if / else statement is eclosed within __.:", 
-    answerToQuestion: ["quotes", "curlybraces","parenthises","square Brackets"]},
+    theAnswerToQuestion: ["quotes", "curlybraces","parenthises","square Brackets"] , 
+    theCorrectAnswers: "parenthises"},
     {questionsAsked:"Arrays on JavaScript can be used to store ___.", 
-    answerToQuestion: ["numbers and strings", "others arrays","booleans","all of the above"]},
+    theAnswerToQuestion: ["numbers and strings", "others arrays","booleans","all of the above"], 
+    theCorrectAnswers: "parenthises"},
     {questionsAsked:"String values must be closed within when being assigned to a veriables. ", 
-    answerToQuestion: ["commas", "curlybraces","quotes","parenthises"]},
+    theAnswerToQuestion: ["commas", "curlybraces","quotes","parenthises"], 
+    theCorrectAnswers: "parenthises"},
     {questionsAsked:"String values must be closed within when being assigned to a veriables. ", 
-    answerToQuestion: ["JavaScript", "git terminal","for loops","consol.log"]}
+    theAnswerToQuestion: ["JavaScript", "git terminal","for loops","consol.log"], 
+    theCorrectAnswers: "consol.log"}
 
-]
+] //Correct answrs array
+
+
 
 let theCurrentQuestionIndex = 0;
 let theCurrentAnswer = 0;
@@ -86,6 +93,7 @@ startGameQuestions();
 
 });
 
+let theCurrentPossibleAnswer = "";
 
 function startGameQuestions(){
     let theQuestionGoingToBeAsked = document.getElementById("questionsTextInput");
@@ -93,15 +101,15 @@ function startGameQuestions(){
 
     theQuestionGoingToBeAsked.textContent = theCurrentQuestion.questionsAsked;
 
-    for (let i = 0; i < theCurrentQuestion.answerToQuestion.length; i++) {
-        let theCurrentPossibleAnswer = theCurrentQuestion.answerToQuestion[i];
-        
+    for (let i = 0; i < theCurrentQuestion.theAnswerToQuestion.length; i++) {
+        // theCurrentPossibleAnswer = theCurrentQuestion.theAnswerToQuestion[i];
+        console.log(theCurrentPossibleAnswer)
 
         let thePossibleAnswersListEl = document.getElementById("possibleAnswersList")
 
         let liEl = document.createElement("li")
         let buttonEl = document.createElement("button");
-        buttonEl.textContent = theCurrentPossibleAnswer;
+        buttonEl.textContent = theCurrentQuestion.theAnswerToQuestion[i];
         thePossibleAnswersListEl.appendChild(liEl);
         liEl.appendChild(buttonEl);
 
@@ -114,9 +122,20 @@ function startGameQuestions(){
 }
 
 document.getElementById("possibleAnswersList").addEventListener("click", function(event) {
-    event.target = theCurrentPossibleAnswer[2]
+    event.preventDefault()
 
+    console.log(event.target.innerText)
+    console.log()
+    let answerPicked = event.target.innerText;
 
+    if (theQuestionsList[0].theCorrectAnswers !== answerPicked) {
+       error.textContent = "Wrong Answer!!!!"
+        console.log(answerPicked)
+        console.log("you are wrong")
+    }
+    else{ (theQuestionsList[0].theCorrectAnswers == answerPicked)
+        error.textContent = "Right Answer!!!!"
+    }
 
 });
 

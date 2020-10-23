@@ -94,6 +94,8 @@ startGameQuestions();
 });
 
 function startGameQuestions(){
+
+
     let theQuestionGoingToBeAsked = document.getElementById("questionsTextInput");
     let theCurrentQuestion = theQuestionsList[theCurrentQuestionIndex];
 
@@ -101,6 +103,7 @@ function startGameQuestions(){
 
     for (let i = 0; i < theCurrentQuestion.theAnswerToQuestion.length; i++) {
          theCurrentPossibleAnswer = theCurrentQuestion.theAnswerToQuestion[i];
+         
         console.log(theCurrentQuestion)
 
         let thePossibleAnswersListEl = document.getElementById("possibleAnswersList")
@@ -123,19 +126,25 @@ document.getElementById("possibleAnswersList").addEventListener("click", functio
     console.log()
     let answerPicked = event.target.innerText;
 
-    if (theQuestionsList[0].theCorrectAnswers !== answerPicked) {
+
+
+
+    if (theQuestionsList[theCurrentQuestionIndex].theCorrectAnswers !== answerPicked) {
        displayMessage.textContent = "Wrong Answer!!!!"
         console.log(answerPicked)
         console.log("you are wrong")
     }
     else { (theQuestionsList[theCurrentQuestionIndex].theCorrectAnswers !== answerPicked )
-        theCurrentScore++
-        theCurrentQuestionIndex ++;
-        startGameQuestions()
+        theCurrentScore++;
+        theCurrentQuestionIndex ++ ;
         displayMessage.textContent = "Right Answer!!!!"
+        startGameQuestions()
+        
     }
+
     
 });
+
 
 
 

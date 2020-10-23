@@ -76,8 +76,9 @@ let theQuestionsList = [
 
 let theCurrentQuestionIndex = 0;
 let theCurrentAnswer = 0;
-let theCurrentHighScore =0;
+let theCurrentHighScore = 0;
 let theCurrentPossibleAnswer = "";
+let theCurrentScore = 0;
 
 
 document.getElementById("startButtonGame").addEventListener("click", function(event){
@@ -100,7 +101,7 @@ function startGameQuestions(){
 
     for (let i = 0; i < theCurrentQuestion.theAnswerToQuestion.length; i++) {
          theCurrentPossibleAnswer = theCurrentQuestion.theAnswerToQuestion[i];
-        console.log(theCurrentPossibleAnswer)
+        console.log(theCurrentQuestion)
 
         let thePossibleAnswersListEl = document.getElementById("possibleAnswersList")
         let liEl = document.createElement("li")
@@ -127,18 +128,22 @@ document.getElementById("possibleAnswersList").addEventListener("click", functio
         console.log(answerPicked)
         console.log("you are wrong")
     }
-    else{ (theQuestionsList[0].theCorrectAnswers == answerPicked)
+    else { (theQuestionsList[theCurrentQuestionIndex].theCorrectAnswers !== answerPicked )
+        theCurrentScore++
+        theCurrentQuestionIndex ++;
+        startGameQuestions()
         displayMessage.textContent = "Right Answer!!!!"
     }
-
+    
 });
 
 
- function name(params) {
-    
 
 
 
+
+
+// Clearinterval to clear 
 // };
 
 

@@ -134,7 +134,7 @@ document.getElementById("possibleAnswersList").addEventListener("click", functio
 });
 
 
-// function name(params) {
+ function name(params) {
     
 
 

@@ -77,6 +77,7 @@ let theQuestionsList = [
 let theCurrentQuestionIndex = 0;
 let theCurrentAnswer = 0;
 let theCurrentHighScore =0;
+let theCurrentPossibleAnswer = "";
 
 
 document.getElementById("startButtonGame").addEventListener("click", function(event){
@@ -84,16 +85,12 @@ document.getElementById("startButtonGame").addEventListener("click", function(ev
     // need to add timer
 // setTimeout(timeRanOut, 5000);
 
-
 document.getElementById("startButtonGame").setAttribute("class", "hide")
 document.getElementById("instructionsForGame").setAttribute("class", "hide")
 document.getElementById("questionsTextInput").setAttribute("class", "")
 
 startGameQuestions();
-
 });
-
-let theCurrentPossibleAnswer = "";
 
 function startGameQuestions(){
     let theQuestionGoingToBeAsked = document.getElementById("questionsTextInput");
@@ -102,11 +99,10 @@ function startGameQuestions(){
     theQuestionGoingToBeAsked.textContent = theCurrentQuestion.questionsAsked;
 
     for (let i = 0; i < theCurrentQuestion.theAnswerToQuestion.length; i++) {
-        // theCurrentPossibleAnswer = theCurrentQuestion.theAnswerToQuestion[i];
+         theCurrentPossibleAnswer = theCurrentQuestion.theAnswerToQuestion[i];
         console.log(theCurrentPossibleAnswer)
 
         let thePossibleAnswersListEl = document.getElementById("possibleAnswersList")
-
         let liEl = document.createElement("li")
         let buttonEl = document.createElement("button");
         buttonEl.textContent = theCurrentQuestion.theAnswerToQuestion[i];
@@ -115,8 +111,6 @@ function startGameQuestions(){
 
         buttonEl.addEventListener("click", function (event) {
             event.preventDefault()
-
-
 });
 };
 }
@@ -129,12 +123,12 @@ document.getElementById("possibleAnswersList").addEventListener("click", functio
     let answerPicked = event.target.innerText;
 
     if (theQuestionsList[0].theCorrectAnswers !== answerPicked) {
-       error.textContent = "Wrong Answer!!!!"
+       displayMessage.textContent = "Wrong Answer!!!!"
         console.log(answerPicked)
         console.log("you are wrong")
     }
     else{ (theQuestionsList[0].theCorrectAnswers == answerPicked)
-        error.textContent = "Right Answer!!!!"
+        displayMessage.textContent = "Right Answer!!!!"
     }
 
 });

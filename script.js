@@ -101,12 +101,12 @@ function startGameQuestions(){
 
     theQuestionGoingToBeAsked.textContent = theCurrentQuestion.questionsAsked;
 
+    let thePossibleAnswersListEl = document.getElementById("possibleAnswersList");
+    thePossibleAnswersListEl.innerHTML = "";
     for (let i = 0; i < theCurrentQuestion.theAnswerToQuestion.length; i++) {
          theCurrentPossibleAnswer = theCurrentQuestion.theAnswerToQuestion[i];
-         
-        console.log(theCurrentQuestion)
+         console.log(theCurrentQuestion)
 
-        let thePossibleAnswersListEl = document.getElementById("possibleAnswersList")
         let liEl = document.createElement("li")
         let buttonEl = document.createElement("button");
         buttonEl.textContent = theCurrentQuestion.theAnswerToQuestion[i];
@@ -114,12 +114,12 @@ function startGameQuestions(){
         liEl.appendChild(buttonEl);
 
         buttonEl.addEventListener("click", function (event) {
-            event.preventDefault()
-});
-};
-}
+        event.preventDefault()
+    
+    });
+    };
 
-document.getElementById("possibleAnswersList").addEventListener("click", function(event) {
+    document.getElementById("possibleAnswersList").addEventListener("click", function(event) {
     event.preventDefault()
 
     console.log(event.target.innerText)
@@ -138,13 +138,13 @@ document.getElementById("possibleAnswersList").addEventListener("click", functio
         theCurrentScore++;
         theCurrentQuestionIndex ++ ;
         displayMessage.textContent = "Right Answer!!!!"
-        startGameQuestions()
+        startGameQuestions();
         
     }
 
     
 });
-
+};
 
 
 

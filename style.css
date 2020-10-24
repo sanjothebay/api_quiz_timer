@@ -7,11 +7,22 @@
     margin-top: 20px;
 }
 
-main{
+form{
+    text-align: center;
+    direction: none;
+    padding: 150px 100px 0px 150px;
 
 }
 
 .hide {
     display: none;
     
+}
+li{
+    list-style-type: none;
+}
+
+span{
+padding-left:  560PX;
+
 }

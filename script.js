@@ -62,10 +62,10 @@ let theQuestionsList = [
     theCorrectAnswers: "parenthises"},
     {questionsAsked:"Arrays on JavaScript can be used to store ___.", 
     theAnswerToQuestion: ["numbers and strings", "others arrays","booleans","all of the above"], 
-    theCorrectAnswers: "parenthises"},
+    theCorrectAnswers: "all of the above"},
     {questionsAsked:"String values must be closed within when being assigned to a veriables. ", 
     theAnswerToQuestion: ["commas", "curlybraces","quotes","parenthises"], 
-    theCorrectAnswers: "parenthises"},
+    theCorrectAnswers: "curlybraces"},
     {questionsAsked:"String values must be closed within when being assigned to a veriables. ", 
     theAnswerToQuestion: ["JavaScript", "git terminal","for loops","consol.log"], 
     theCorrectAnswers: "consol.log"}
@@ -92,6 +92,19 @@ document.getElementById("questionsTextInput").setAttribute("class", "")
 
 startGameQuestions();
 });
+// selection buttton zone 
+let buttons = document.querySelector("#possibleAnswersList");
+// create an event click for button zone
+buttons.addEventListener("click", function(event){
+    // click is a button 
+    if (event.target.tagName === "BUTTON" ) {
+        if (event.target.textContent == theCurrentPossibleAnswer ) {
+         
+        }
+       
+    }
+
+});
 
 function startGameQuestions(){
 
@@ -112,13 +125,14 @@ function startGameQuestions(){
         let liEl = document.createElement("li")
         let buttonEl = document.createElement("button");
         buttonEl.textContent = theCurrentQuestion.theAnswerToQuestion[i];
+        displayMessage.textContent = "";
         thePossibleAnswersListEl.appendChild(liEl);
         liEl.appendChild(buttonEl);
 
-        buttonEl.addEventListener("click", function (event) {
-        event.preventDefault()
+        // buttonEl.addEventListener("click", function (event) {
+        // event.preventDefault()
     
-    });
+    };
     };
 
     document.getElementById("possibleAnswersList").addEventListener("click", function(event) {
@@ -147,60 +161,10 @@ function startGameQuestions(){
 
     
 });
-};
-
-
-
-
-
-
-
-
-
-// Clearinterval to clear 
-// };
-
-
-// // var getAnswers = questions[currentAnswer];
-// // liEl.textContent = getAnswers.choices;
-
-// // KNOW To know when user click event.listener for each button 
-// // console.log(currentQuestion)
-// // console.log(possibleAnswersListEl)
-// // console.log(currentQuestion.choices,i)
-// // add a form to teh Html for the list ???
-
-
-// // function renderTodos()  {
-// //   todoCountSpan.textContent = todos.length;
-// //   for (var i = 0; i < todos.length; i++) {
-// //     var todo = todos[i];
-    
-// //     var li = document.createElement("li");
-// //     li.textContent = todo;
-// //     todoList.appendChild(li);
-// //   }
-// // }
-// // renderTodos();
-
-
-
-
-
-// /*
-// see in 2:48 for the list to come out with the array 
-
-// .matches("button)
-
-// function displayMessage(type, message) {
-//   msgDiv.textContent = message;
-//   msgDiv.setAttribute("class", type);
-// }
-
-// renderTodo
-// */
-    
-// // };
-// // function timeRanOut() {
-// //     alert("Time Ran Out!!!!");
-// // }};
+// Keep track o score 
+//  make a  HighScore  page 
+// stor score to local storage 
+// cteate a yoy win page 
+// make a game over funtion  but everthing that happen during the game  Hide qustion and but score on screen 
+// 
+//

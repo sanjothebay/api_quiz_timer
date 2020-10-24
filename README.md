@@ -54,10 +54,10 @@ I notice that the app could not show the Right message when selecting the correc
 
 ![image](https://user-images.githubusercontent.com/67298961/97094314-95506700-1619-11eb-8ca8-50092e301a3e.png)
 
-I created a page to take you to the Highscore page and input your initials. This would use the localStorage
+I created a page to take you to the Highscore page and input your initials (This would use the localStorage).The go back button take you back to the start of teh game.
 
-I really tried my best im having a hard time with JS and i did not wnat to copy or cheat by grabing someone code. This is work done by me and all me. 
-I stayed up very late and asked lost of questions. Over all the app game does work. Im very happy and very disapinted as im having a hard time. 
+I really tried my best im having a hard time with JS and i did not want to copy or cheat by grabing someone`s code. This is work done by me and all me. 
+I have been staying up very late and asked lost of questions.looking over the classes again. Going to the after Hours. IM just a slow learner. I have no expernce in coding and i have gotten very for from what i use too know. Overall the app game does work. Im happy and very disapinted as im having a hard time. 
 i will not give up. I know im the dumbest one in the class but i will get there. 
 
 

@@ -5,27 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css_Assets/style.css">
 </head>
 
 <body>
     <header>
-        <div class="viewHighScore"><a class="nav-link" href="./highScore.html">View HighScore:</a></div>
-        <div class="timerCountDown">Time:</div>
+        <div class="viewHighScore"><a class="nav-link" href="./html_Assets/highScore.html">View HighScore:</a></div>
+
+        <div id="timer">
+<div class="timerCountDown">Time:1:00</div>
+            <div id="counter"></div>
+            <div id="btimeGauge"></div>
+            <div id="timeGauge"></div>
+        </div>
+        <div id="progress"></div>
+        </div>
+
     </header>
 
     <main>
-            <form class="Container">
-                <h3 id="instructionsForGame">
-                    Try to answer the following code-related questions 
-                    within the time limit. Keep in mind that incorrect 
-                    answers will penalized your scoretimeby ten seconds 
-                </h3>
-                <h3 id="questionsTextInput" class= "hide"></h3>
-                <ul id=possibleAnswersList></ul>
-                <button id="startButtonGame">start</button>
-            </form>
-            <span id="displayMessage"></span> 
+        <form class="Container">
+            <h3 id="instructionsForGame">
+                Try to answer the following code-related questions
+                within the time limit. Keep in mind that incorrect
+                answers will penalized your scoretimeby ten seconds
+            </h3>
+            <h3 id="questionsTextInput" class="hide"></h3>
+            <ul id=possibleAnswersList></ul>
+            <button id="startButtonGame">start</button>
+        </form>
+        <span id="displayMessage"></span>
     </main>
 
     <script src="./script.js"></script>

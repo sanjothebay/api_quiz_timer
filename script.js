@@ -18,6 +18,9 @@ let theQuestionsList = [
 
 ] //Correct answrs array
 
+let counter = document.getElementById("counter");
+let timeGauge = document.getElementById("timeGauge");
+let progress = document.getElementById("progress");
 
 let count = localStorage.getItem("count");
 
@@ -31,9 +34,9 @@ let theCurrentScore = 0;
 document.getElementById("startButtonGame").addEventListener("click", function(event){
     event.preventDefault();
     // need to add timer
-// setTimeout(timeRanOut, 5000);
-
-document.getElementById("startButtonGame").setAttribute("class", "hide")
+    // setTimeout(timeRanOut, 5000);
+    
+    document.getElementById("startButtonGame").setAttribute("class", "hide")
 document.getElementById("instructionsForGame").setAttribute("class", "hide")
 document.getElementById("questionsTextInput").setAttribute("class", "")
 
@@ -46,56 +49,59 @@ buttons.addEventListener("click", function(event){
     // click is a button 
     if (event.target.tagName === "BUTTON" ) {
         if (event.target.textContent == theCurrentPossibleAnswer ) {
-         
+            
         }
-       
+        
     }
-
+    
 });
 
 function startGameQuestions(){
-
+    
     let counter = document.querySelector("#counter")
     localStorage.setItem("count", count);
-
+    
     let theQuestionGoingToBeAsked = document.getElementById("questionsTextInput");
     let theCurrentQuestion = theQuestionsList[theCurrentQuestionIndex];
-
+    
     theQuestionGoingToBeAsked.textContent = theCurrentQuestion.questionsAsked;
     
-
+    
     let thePossibleAnswersListEl = document.getElementById("possibleAnswersList");
     thePossibleAnswersListEl.innerHTML = "";
     for (let i = 0; i < theCurrentQuestion.theAnswerToQuestion.length; i++) {
          theCurrentPossibleAnswer = theCurrentQuestion.theAnswerToQuestion[i];
          console.log(theCurrentQuestion)
          
-
+         
         let liEl = document.createElement("li")
         let buttonEl = document.createElement("button");
         buttonEl.textContent = theCurrentQuestion.theAnswerToQuestion[i];
         displayMessage.textContent = "";
         thePossibleAnswersListEl.appendChild(liEl);
         liEl.appendChild(buttonEl);
-
+        
         // buttonEl.addEventListener("click", function (event) {
         // event.preventDefault()
-    
+        
+        
     };
-    };
+};
 
-    document.getElementById("possibleAnswersList").addEventListener("click", function(event) {
+document.getElementById("possibleAnswersList").addEventListener("click", function(event) {
     event.preventDefault()
-
+    
+    
+    
     console.log(event.target.innerText)
     console.log()
     let answerPicked = event.target.innerText;
-
-
-
-
+    
+    
+    
+    
     if (theQuestionsList[theCurrentQuestionIndex].theCorrectAnswers !== answerPicked) {
-       displayMessage.textContent = "Wrong Answer!!!!"
+        displayMessage.textContent = "Wrong Answer!!!!"
         console.log(answerPicked)
         console.log("you are wrong")
     }
@@ -103,15 +109,48 @@ function startGameQuestions(){
         theCurrentScore++;
         theCurrentQuestionIndex ++ ;
         displayMessage.textContent = "Right Answer!!!!"
-        startGameQuestions();
+        startGameQuestions();   
         
+    }
+    if (theQuestionsList[theCurrentQuestionIndex].theCorrectAnswers < answerPicked  ) {
+        endQuiz()
         
     }
 
-    
+// counter render
+
+function renderCounter(){
+    if(count <= questionTime){
+        counter.innerHTML = count;
+        timeGauge.style.width = count * gaugeUnit + "px";
+        count++
+    }else{
+        count = 0;
+        // change progress color to red
+        answerIsWrong();
+        if(runningQuestion < lastQuestion){
+            runningQuestion++;
+            renderQuestion();
+        }else{
+            // end the quiz and show the score
+            clearInterval(TIMER);
+            scoreRender();
+        }
+    }
+}
+
+
 });
+
+
 // Keep track o score 
 //  make a  HighScore  page 
+function endQuiz(event) {
+    event.preventDefault();
+    window.location.href = "./html_Assets/allDonePage.html";     
+
+}
+
 // stor score to local storage 
 // cteate a yoy win page 
 // make a game over funtion  but everthing that happen during the game  Hide qustion and but score on screen 

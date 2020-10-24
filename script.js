@@ -23,6 +23,7 @@ let timeGauge = document.getElementById("timeGauge");
 let progress = document.getElementById("progress");
 
 let count = localStorage.getItem("count");
+let initial =localStorage.getItem("initial")
 
 let theCurrentQuestionIndex = 0;
 let theCurrentAnswer = 0;

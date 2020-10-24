@@ -100,7 +100,7 @@ function startGameQuestions(){
     let theCurrentQuestion = theQuestionsList[theCurrentQuestionIndex];
 
     theQuestionGoingToBeAsked.textContent = theCurrentQuestion.questionsAsked;
-    displayMessage.innerHTML = "";
+    
 
     let thePossibleAnswersListEl = document.getElementById("possibleAnswersList");
     thePossibleAnswersListEl.innerHTML = "";

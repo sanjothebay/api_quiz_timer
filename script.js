@@ -151,15 +151,14 @@ document
   });
 
 function endQuiz() {
-  window.location.href = "./html_Assets/allDonePage.html";
-}
-
-function InitialFoRHighScore() {
-    document.getElementById("InitialsBTN").click("click");
-    console.log("click")
-
-    localStorage.setItem('Score', theCurrentScore);
-    let initialStored = localStorage.getItem(theCurrentScore);
-    document.getElementById("initialInputed").append(initialStored);
-  }
+  window.location.href = "./html_Assets/gameOverPage.html";
   
+  
+  document.getElementById("initialInput").addEventListener("click", function () {
+    
+    console.log("click");
+    // localStorage.setItem(initialInput, theCurrentScore);
+    // let initialStored = localStorage.getItem(initialInput, theCurrentScore);
+    // document.getElementById("initialInputed").append(initialStored);
+  });
+}

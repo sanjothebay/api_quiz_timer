@@ -153,3 +153,13 @@ document
 function endQuiz() {
   window.location.href = "./html_Assets/allDonePage.html";
 }
+
+function InitialFoRHighScore() {
+    document.getElementById("InitialsBTN").click("click");
+    console.log("click")
+
+    localStorage.setItem('Score', theCurrentScore);
+    let initialStored = localStorage.getItem(theCurrentScore);
+    document.getElementById("initialInputed").append(initialStored);
+  }
+  

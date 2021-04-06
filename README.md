@@ -1,6 +1,6 @@
-https://github.com/sanjothebay/tech_monterrey-_third-_hw_api_quiz_timer
+https://github.com/sanjothebay/api_quiz_timer
 
-https://sanjothebay.github.io/tech_monterrey-_third-_hw_api_quiz_timer/
+https://sanjothebay.github.io/api_quiz_timer/
 
 # tech_monterrey-_third-_hw_api_quiz_timer
 
